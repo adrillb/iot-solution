@@ -2,6 +2,10 @@ using System;
 using Gtk;
 using System.IO;
 using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+using ZXing;
+using ZXing.SkiaSharp;
 
 namespace Prueba1
 {
@@ -72,8 +76,31 @@ namespace Prueba1
         //Botón 1
        static void Onbutton1Clicked(object sender, EventArgs arg)
        {
-            Process.Start("libcamera-still", "-f -t 2000 -o barcode.jpg");
+          Process.Start("libcamera-still", "-f -t 5000 -o barcode.jpg");
+          // var txt = "Hola";  
+          File.ReadAllBytes("/barcode.png");
+          Bitmap barcodeBitmap = new Bitmap(@"/barcode.jpg");          
+          var reader = new BarcodeReader();
+          // BarcodeReader<EAN_8> reader = new BarcodeReader<UPCEANReader>();
+          Result barcode = reader.Decode(barcodeBitmap);
+          // if(results != null)
+          // {
+          //      Console.Write("A barcode has been readed");
+          //      foreach(BarcodeResult result in results)
+          //      {
+          //           Console.Write(result.Text);
+          //      } 
+          // }
+          
+          // BarcodeReaderGeneric reader = new BarcodeReaderGeneric();
+          
+          //   BarcodeWriter barcodeWriter = new ZXing.BarcodeWriter();
+          //   barcodeWriter.Format = BarcodeFormat.CODABAR;
+          //   Bitmap bm =  new Bitmap(barcodeWriter.Write(txt), 300, 300);
+          
+          // Result barcode = reader.           
             // Process.Start("rm", "barcode.jpg");
+
        }
        //Botón 2
        static void Onbutton2Clicked(object sender, EventArgs arg)

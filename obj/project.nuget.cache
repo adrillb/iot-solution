@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NTFFSALaElzgRAK/WZTPtp/6vngelTESVUoQgMfO3VJpXXQOlguYJAlAh8laBH4oCeFw21ehfPFe7fEKIh1GWg==",
+  "dgSpecHash": "ZJFTpWeRGmveIIc2rvBUneaouJDI1aEm1RgWM+NhJqnWsbByzOwsyTrXipQls1p3EQjXdk4GXFidcTdCi898TA==",
   "success": true,
   "projectFilePath": "/home/adrillb/Desktop/TFG/iot-solution/iot-solution.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,14 @@
     "/home/adrillb/.nuget/packages/giosharp/3.24.24.38/giosharp.3.24.24.38.nupkg.sha512",
     "/home/adrillb/.nuget/packages/glibsharp/3.24.24.38/glibsharp.3.24.24.38.nupkg.sha512",
     "/home/adrillb/.nuget/packages/gtksharp/3.24.24.38/gtksharp.3.24.24.38.nupkg.sha512",
-    "/home/adrillb/.nuget/packages/pangosharp/3.24.24.38/pangosharp.3.24.24.38.nupkg.sha512"
+    "/home/adrillb/.nuget/packages/microsoft.win32.systemevents/7.0.0/microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "/home/adrillb/.nuget/packages/pangosharp/3.24.24.38/pangosharp.3.24.24.38.nupkg.sha512",
+    "/home/adrillb/.nuget/packages/skiasharp/2.88.3/skiasharp.2.88.3.nupkg.sha512",
+    "/home/adrillb/.nuget/packages/skiasharp.nativeassets.macos/2.88.3/skiasharp.nativeassets.macos.2.88.3.nupkg.sha512",
+    "/home/adrillb/.nuget/packages/skiasharp.nativeassets.win32/2.88.3/skiasharp.nativeassets.win32.2.88.3.nupkg.sha512",
+    "/home/adrillb/.nuget/packages/system.drawing.common/7.0.0/system.drawing.common.7.0.0.nupkg.sha512",
+    "/home/adrillb/.nuget/packages/zxing.net/0.16.9/zxing.net.0.16.9.nupkg.sha512",
+    "/home/adrillb/.nuget/packages/zxing.net.bindings.skiasharp/0.16.13/zxing.net.bindings.skiasharp.0.16.13.nupkg.sha512"
   ],
   "logs": []
 }
