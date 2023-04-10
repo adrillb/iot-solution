@@ -14,6 +14,66 @@
           "lib/net6.0/AtkSharp.dll": {}
         }
       },
+      "BarCode/2023.4.1": {
+        "type": "package",
+        "dependencies": {
+          "IronSoftware.System.Drawing": "2023.3.3",
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
+          "SixLabors.ImageSharp": "2.1.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/IronBarCode.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/SixLabors.Fonts.dll": {},
+          "lib/netstandard2.0/SixLabors.ImageSharp.Drawing.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/IronBarCode.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/SixLabors.Fonts.dll": {},
+          "lib/netstandard2.0/SixLabors.ImageSharp.Drawing.dll": {}
+        },
+        "build": {
+          "buildTransitive/netstandard2.0/BarCode.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/IronPdfInterop.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-arm64/native/IronPdfInterop.dylib": {
+            "assetType": "native",
+            "rid": "osx-arm64"
+          },
+          "runtimes/osx-x64/native/IronPdfInterop.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/IronPdfInterop.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/IronPdfInterop.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "BitMiracle.LibTiff.NET/2.4.649": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BitMiracle.LibTiff.NET.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/BitMiracle.LibTiff.NET.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CairoSharp/3.24.24.38": {
         "type": "package",
         "compile": {
@@ -79,6 +139,36 @@
           "build/GtkSharp.targets": {}
         }
       },
+      "IronSoftware.System.Drawing/2023.3.3": {
+        "type": "package",
+        "dependencies": {
+          "BitMiracle.LibTiff.NET": "2.4.649",
+          "SixLabors.ImageSharp": "2.1.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/IronSoftware.Drawing.Common.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/IronSoftware.Drawing.Common.dll": {
+            "related": ".deps.json;.pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Win32.SystemEvents/7.0.0": {
         "type": "package",
         "compile": {
@@ -114,59 +204,20 @@
           "lib/net6.0/PangoSharp.dll": {}
         }
       },
-      "SkiaSharp/2.88.3": {
+      "SixLabors.ImageSharp/3.0.1": {
         "type": "package",
-        "dependencies": {
-          "SkiaSharp.NativeAssets.Win32": "2.88.3",
-          "SkiaSharp.NativeAssets.macOS": "2.88.3"
-        },
         "compile": {
-          "lib/net6.0/SkiaSharp.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/SkiaSharp.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/SixLabors.ImageSharp.dll": {
+            "related": ".xml"
           }
-        }
-      },
-      "SkiaSharp.NativeAssets.macOS/2.88.3": {
-        "type": "package",
-        "compile": {
-          "lib/net5.0/_._": {}
         },
-        "runtime": {
-          "lib/net5.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/osx/native/libSkiaSharp.dylib": {
-            "assetType": "native",
-            "rid": "osx"
-          }
-        }
-      },
-      "SkiaSharp.NativeAssets.Win32/2.88.3": {
-        "type": "package",
-        "compile": {
-          "lib/net5.0/_._": {}
-        },
-        "runtime": {
-          "lib/net5.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win-arm64/native/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win-arm64"
-          },
-          "runtimes/win-x64/native/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/libSkiaSharp.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          }
+        "build": {
+          "build/SixLabors.ImageSharp.props": {}
         }
       },
       "System.Drawing.Common/7.0.0": {
@@ -194,33 +245,16 @@
           }
         }
       },
-      "ZXing.Net/0.16.9": {
+      "ZXing.Net/0.16.6": {
         "type": "package",
         "compile": {
-          "lib/net6.0/zxing.dll": {
-            "related": ".XML"
+          "lib/netcoreapp3.1/zxing.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/zxing.dll": {
-            "related": ".XML"
-          }
-        }
-      },
-      "ZXing.Net.Bindings.SkiaSharp/0.16.13": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.88.3",
-          "ZXing.Net": "0.16.9"
-        },
-        "compile": {
-          "lib/net6.0/ZXing.SkiaSharp.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/ZXing.SkiaSharp.dll": {
-            "related": ".pdb;.xml"
+          "lib/netcoreapp3.1/zxing.dll": {
+            "related": ".xml"
           }
         }
       }
@@ -238,6 +272,50 @@
         "atksharp.nuspec",
         "lib/net6.0/AtkSharp.dll",
         "lib/netstandard2.0/AtkSharp.dll"
+      ]
+    },
+    "BarCode/2023.4.1": {
+      "sha512": "t9yWnUA61Nu0xNf0T7w6L5iCxbmiwv9b/lfmAhcqqexldDwprFkUz+JC2pnTdX8Gwgr+GaSimUZcv5qkHDDy7w==",
+      "type": "package",
+      "path": "barcode/2023.4.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EULA.txt",
+        "barcode.2023.4.1.nupkg.sha512",
+        "barcode.nuspec",
+        "build/net/BarCode.targets",
+        "build/netstandard2.0/BarCode.targets",
+        "buildTransitive/net/BarCode.targets",
+        "buildTransitive/netstandard2.0/BarCode.targets",
+        "docs/README.md",
+        "images/iron-logo-128.png",
+        "lib/netstandard2.0/IronBarCode.dll",
+        "lib/netstandard2.0/IronBarCode.xml",
+        "lib/netstandard2.0/SixLabors.Fonts.dll",
+        "lib/netstandard2.0/SixLabors.ImageSharp.Drawing.dll",
+        "readme-setup.txt",
+        "readme.txt",
+        "runtimes/linux-x64/native/IronPdfInterop.so",
+        "runtimes/osx-arm64/native/IronPdfInterop.dylib",
+        "runtimes/osx-x64/native/IronPdfInterop.dylib",
+        "runtimes/win-x64/native/IronPdfInterop.dll",
+        "runtimes/win-x86/native/IronPdfInterop.dll"
+      ]
+    },
+    "BitMiracle.LibTiff.NET/2.4.649": {
+      "sha512": "XCEdfCphKo0UAvSg1h/OzOFWtjkIGnPMAziYkNqV7NVrqb/tZJTBxJhxIEX7gpvQwg8GIRYt133SUncfkKfjLA==",
+      "type": "package",
+      "path": "bitmiracle.libtiff.net/2.4.649",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bitmiracle.libtiff.net.2.4.649.nupkg.sha512",
+        "bitmiracle.libtiff.net.nuspec",
+        "lib/net40/BitMiracle.LibTiff.NET.dll",
+        "lib/net40/BitMiracle.LibTiff.NET.xml",
+        "lib/netstandard2.0/BitMiracle.LibTiff.NET.dll",
+        "lib/netstandard2.0/BitMiracle.LibTiff.NET.xml"
       ]
     },
     "CairoSharp/3.24.24.38": {
@@ -306,6 +384,45 @@
         "lib/netstandard2.0/GtkSharp.dll"
       ]
     },
+    "IronSoftware.System.Drawing/2023.3.3": {
+      "sha512": "GRA/kBUMJErkn7bs7i3y2LZOT3YMAcWFnKZh0Nm+2xvey3jIA0A7q2Ti4RP0AAnZ3eUuhpyRl2bymQgyzc9z2w==",
+      "type": "package",
+      "path": "ironsoftware.system.drawing/2023.3.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.txt",
+        "docs/README.md",
+        "images/ironsoftware-logo.png",
+        "ironsoftware.system.drawing.2023.3.3.nupkg.sha512",
+        "ironsoftware.system.drawing.nuspec",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.deps.json",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.dll",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.pdb",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.xml"
+      ]
+    },
+    "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+      "sha512": "NxP6ahFcBnnSfwNBi2KH2Oz8Xl5Sm2krjId/jRR3I7teFphwiUoUeZPwTNA21EX+5PtjqmyAvKaOeBXcJjcH/w==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.abstractions/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net461/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "Microsoft.Win32.SystemEvents/7.0.0": {
       "sha512": "2nXPrhdAyAzir0gLl8Yy8S5Mnm/uBSQQA7jEsILOS1MTyS7DbmV1NgViMtvV1sfCD1ebITpNwb1NIinKeJgUVQ==",
       "type": "package",
@@ -350,129 +467,20 @@
         "pangosharp.nuspec"
       ]
     },
-    "SkiaSharp/2.88.3": {
-      "sha512": "GG8X3EdfwyBfwjl639UIiOVOKEdeoqDgYrz0P1MUCnefXt9cofN+AK8YB/v1+5cLMr03ieWCQdDmPqnFIzSxZw==",
+    "SixLabors.ImageSharp/3.0.1": {
+      "sha512": "o0v/J6SJwp3RFrzR29beGx0cK7xcMRgOyIuw8ZNLQyNnBhiyL/vIQKn7cfycthcWUPG3XezUjFwBWzkcUUDFbg==",
       "type": "package",
-      "path": "skiasharp/2.88.3",
+      "path": "sixlabors.imagesharp/3.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.txt",
-        "THIRD-PARTY-NOTICES.txt",
-        "interactive-extensions/dotnet/SkiaSharp.DotNet.Interactive.dll",
-        "lib/monoandroid1.0/SkiaSharp.dll",
-        "lib/monoandroid1.0/SkiaSharp.pdb",
-        "lib/monoandroid1.0/SkiaSharp.xml",
-        "lib/net462/SkiaSharp.dll",
-        "lib/net462/SkiaSharp.pdb",
-        "lib/net462/SkiaSharp.xml",
-        "lib/net5.0/SkiaSharp.dll",
-        "lib/net5.0/SkiaSharp.pdb",
-        "lib/net5.0/SkiaSharp.xml",
-        "lib/net6.0-android30.0/SkiaSharp.dll",
-        "lib/net6.0-android30.0/SkiaSharp.pdb",
-        "lib/net6.0-android30.0/SkiaSharp.xml",
-        "lib/net6.0-ios13.6/SkiaSharp.dll",
-        "lib/net6.0-ios13.6/SkiaSharp.pdb",
-        "lib/net6.0-ios13.6/SkiaSharp.xml",
-        "lib/net6.0-maccatalyst13.5/SkiaSharp.dll",
-        "lib/net6.0-maccatalyst13.5/SkiaSharp.pdb",
-        "lib/net6.0-maccatalyst13.5/SkiaSharp.xml",
-        "lib/net6.0-macos10.15/SkiaSharp.dll",
-        "lib/net6.0-macos10.15/SkiaSharp.pdb",
-        "lib/net6.0-macos10.15/SkiaSharp.xml",
-        "lib/net6.0-tizen7.0/SkiaSharp.dll",
-        "lib/net6.0-tizen7.0/SkiaSharp.pdb",
-        "lib/net6.0-tizen7.0/SkiaSharp.xml",
-        "lib/net6.0-tvos13.4/SkiaSharp.dll",
-        "lib/net6.0-tvos13.4/SkiaSharp.pdb",
-        "lib/net6.0-tvos13.4/SkiaSharp.xml",
-        "lib/net6.0/SkiaSharp.dll",
-        "lib/net6.0/SkiaSharp.pdb",
-        "lib/net6.0/SkiaSharp.xml",
-        "lib/netcoreapp3.1/SkiaSharp.dll",
-        "lib/netcoreapp3.1/SkiaSharp.pdb",
-        "lib/netcoreapp3.1/SkiaSharp.xml",
-        "lib/netstandard1.3/SkiaSharp.dll",
-        "lib/netstandard1.3/SkiaSharp.pdb",
-        "lib/netstandard1.3/SkiaSharp.xml",
-        "lib/netstandard2.0/SkiaSharp.dll",
-        "lib/netstandard2.0/SkiaSharp.pdb",
-        "lib/netstandard2.0/SkiaSharp.xml",
-        "lib/netstandard2.1/SkiaSharp.dll",
-        "lib/netstandard2.1/SkiaSharp.pdb",
-        "lib/netstandard2.1/SkiaSharp.xml",
-        "lib/tizen40/SkiaSharp.dll",
-        "lib/tizen40/SkiaSharp.pdb",
-        "lib/tizen40/SkiaSharp.xml",
-        "lib/uap10.0.10240/SkiaSharp.dll",
-        "lib/uap10.0.10240/SkiaSharp.pdb",
-        "lib/uap10.0.10240/SkiaSharp.xml",
-        "lib/uap10.0.16299/SkiaSharp.dll",
-        "lib/uap10.0.16299/SkiaSharp.pdb",
-        "lib/uap10.0.16299/SkiaSharp.xml",
-        "lib/xamarinios1.0/SkiaSharp.dll",
-        "lib/xamarinios1.0/SkiaSharp.pdb",
-        "lib/xamarinios1.0/SkiaSharp.xml",
-        "lib/xamarinmac2.0/SkiaSharp.dll",
-        "lib/xamarinmac2.0/SkiaSharp.pdb",
-        "lib/xamarinmac2.0/SkiaSharp.xml",
-        "lib/xamarintvos1.0/SkiaSharp.dll",
-        "lib/xamarintvos1.0/SkiaSharp.pdb",
-        "lib/xamarintvos1.0/SkiaSharp.xml",
-        "lib/xamarinwatchos1.0/SkiaSharp.dll",
-        "lib/xamarinwatchos1.0/SkiaSharp.pdb",
-        "lib/xamarinwatchos1.0/SkiaSharp.xml",
-        "skiasharp.2.88.3.nupkg.sha512",
-        "skiasharp.nuspec"
-      ]
-    },
-    "SkiaSharp.NativeAssets.macOS/2.88.3": {
-      "sha512": "CEbWAXMGFkPV3S1snBKK7jEG3+xud/9kmSAhu0BEUKKtlMdxx+Qal0U9bntQREM9QpqP5xLWZooodi8IlV8MEg==",
-      "type": "package",
-      "path": "skiasharp.nativeassets.macos/2.88.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/net462/SkiaSharp.NativeAssets.macOS.targets",
-        "build/net6.0-macos10.15/SkiaSharp.NativeAssets.macOS.targets",
-        "build/xamarinmac2.0/SkiaSharp.NativeAssets.macOS.targets",
-        "buildTransitive/net462/SkiaSharp.NativeAssets.macOS.targets",
-        "buildTransitive/net6.0-macos10.15/SkiaSharp.NativeAssets.macOS.targets",
-        "buildTransitive/xamarinmac2.0/SkiaSharp.NativeAssets.macOS.targets",
-        "lib/net462/_._",
-        "lib/net5.0/_._",
-        "lib/net6.0-macos10.15/_._",
-        "lib/netcoreapp3.1/_._",
-        "lib/netstandard1.3/_._",
-        "lib/xamarinmac2.0/_._",
-        "runtimes/osx/native/libSkiaSharp.dylib",
-        "skiasharp.nativeassets.macos.2.88.3.nupkg.sha512",
-        "skiasharp.nativeassets.macos.nuspec"
-      ]
-    },
-    "SkiaSharp.NativeAssets.Win32/2.88.3": {
-      "sha512": "MU4ASL8VAbTv5vSw1PoiWjjjpjtGhWtFYuJnrN4sNHFCePb2ohQij9JhSdqLLxk7RpRtWPdV93fbA53Pt+J0yw==",
-      "type": "package",
-      "path": "skiasharp.nativeassets.win32/2.88.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.txt",
-        "THIRD-PARTY-NOTICES.txt",
-        "build/net462/SkiaSharp.NativeAssets.Win32.targets",
-        "buildTransitive/net462/SkiaSharp.NativeAssets.Win32.targets",
-        "lib/net462/_._",
-        "lib/net5.0/_._",
-        "lib/netcoreapp3.1/_._",
-        "lib/netstandard1.3/_._",
-        "runtimes/win-arm64/native/libSkiaSharp.dll",
-        "runtimes/win-x64/native/libSkiaSharp.dll",
-        "runtimes/win-x86/native/libSkiaSharp.dll",
-        "skiasharp.nativeassets.win32.2.88.3.nupkg.sha512",
-        "skiasharp.nativeassets.win32.nuspec"
+        "LICENSE",
+        "build/SixLabors.ImageSharp.props",
+        "lib/net6.0/SixLabors.ImageSharp.dll",
+        "lib/net6.0/SixLabors.ImageSharp.xml",
+        "sixlabors.imagesharp.128.png",
+        "sixlabors.imagesharp.3.0.1.nupkg.sha512",
+        "sixlabors.imagesharp.nuspec"
       ]
     },
     "System.Drawing.Common/7.0.0": {
@@ -512,10 +520,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "ZXing.Net/0.16.9": {
-      "sha512": "7WaVMHklpT3Ye2ragqRIwlFRsb6kOk63BOGADV0fan3ulVfGLUYkDi5yNUsZS/7FVNkWbtHAlDLmu4WnHGfqvQ==",
+    "ZXing.Net/0.16.6": {
+      "sha512": "0+6EcJ7Ve1BocwqvqpAmgMa7xF3wxqROcM3KvAE6WGNIqXLA5YEziLjRX+kKYVrcttlFRz1IaoRSzt/o6Ttviw==",
       "type": "package",
-      "path": "zxing.net/0.16.9",
+      "path": "zxing.net/0.16.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -550,12 +558,6 @@
         "lib/net48/zxing.dll",
         "lib/net48/zxing.presentation.XML",
         "lib/net48/zxing.presentation.dll",
-        "lib/net5.0/zxing.XML",
-        "lib/net5.0/zxing.dll",
-        "lib/net6.0/zxing.XML",
-        "lib/net6.0/zxing.dll",
-        "lib/net7.0/zxing.XML",
-        "lib/net7.0/zxing.dll",
         "lib/netcoreapp3.0/zxing.dll",
         "lib/netcoreapp3.0/zxing.xml",
         "lib/netcoreapp3.1/zxing.dll",
@@ -590,51 +592,18 @@
         "lib/windows8/zxing.winmd",
         "lib/wp8/zxing.wp8.0.XML",
         "lib/wp8/zxing.wp8.0.dll",
-        "logo.jpg",
-        "zxing.net.0.16.9.nupkg.sha512",
+        "zxing.net.0.16.6.nupkg.sha512",
         "zxing.net.nuspec"
-      ]
-    },
-    "ZXing.Net.Bindings.SkiaSharp/0.16.13": {
-      "sha512": "+eRgnM6utt+05IXJJjSdTgT2RvRpGjg1JbA2VhI+P3bQxR1QCsJCOJ4/csbfdvVvTfDDGkxB781UKZHk2iCYvA==",
-      "type": "package",
-      "path": "zxing.net.bindings.skiasharp/0.16.13",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net462/ZXing.SkiaSharp.dll",
-        "lib/net462/ZXing.SkiaSharp.pdb",
-        "lib/net462/ZXing.SkiaSharp.xml",
-        "lib/net5.0/ZXing.SkiaSharp.dll",
-        "lib/net5.0/ZXing.SkiaSharp.pdb",
-        "lib/net5.0/ZXing.SkiaSharp.xml",
-        "lib/net6.0/ZXing.SkiaSharp.dll",
-        "lib/net6.0/ZXing.SkiaSharp.pdb",
-        "lib/net6.0/ZXing.SkiaSharp.xml",
-        "lib/netcoreapp3.1/ZXing.SkiaSharp.dll",
-        "lib/netcoreapp3.1/ZXing.SkiaSharp.pdb",
-        "lib/netcoreapp3.1/ZXing.SkiaSharp.xml",
-        "lib/netstandard1.3/ZXing.SkiaSharp.dll",
-        "lib/netstandard1.3/ZXing.SkiaSharp.pdb",
-        "lib/netstandard1.3/ZXing.SkiaSharp.xml",
-        "lib/netstandard2.0/ZXing.SkiaSharp.dll",
-        "lib/netstandard2.0/ZXing.SkiaSharp.pdb",
-        "lib/netstandard2.0/ZXing.SkiaSharp.xml",
-        "lib/netstandard2.1/ZXing.SkiaSharp.dll",
-        "lib/netstandard2.1/ZXing.SkiaSharp.pdb",
-        "lib/netstandard2.1/ZXing.SkiaSharp.xml",
-        "logo.jpg",
-        "zxing.net.bindings.skiasharp.0.16.13.nupkg.sha512",
-        "zxing.net.bindings.skiasharp.nuspec"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BarCode >= 2023.4.1",
       "GtkSharp >= 3.24.24.*",
+      "SixLabors.ImageSharp >= 3.0.1",
       "System.Drawing.Common >= 7.0.0",
-      "ZXing.Net >= 0.16.9",
-      "ZXing.Net.Bindings.SkiaSharp >= 0.16.13"
+      "ZXing.Net >= 0.16.6"
     ]
   },
   "packageFolders": {
@@ -674,9 +643,17 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "BarCode": {
+            "target": "Package",
+            "version": "[2023.4.1, )"
+          },
           "GtkSharp": {
             "target": "Package",
             "version": "[3.24.24.*, )"
+          },
+          "SixLabors.ImageSharp": {
+            "target": "Package",
+            "version": "[3.0.1, )"
           },
           "System.Drawing.Common": {
             "target": "Package",
@@ -684,11 +661,7 @@
           },
           "ZXing.Net": {
             "target": "Package",
-            "version": "[0.16.9, )"
-          },
-          "ZXing.Net.Bindings.SkiaSharp": {
-            "target": "Package",
-            "version": "[0.16.13, )"
+            "version": "[0.16.6, )"
           }
         },
         "imports": [

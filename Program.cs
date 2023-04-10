@@ -5,7 +5,12 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using ZXing;
-using ZXing.SkiaSharp;
+using IronBarCode;
+// using ZXing.Presentation;
+// using SixLabors.ImageSharp;
+// using SixLabors.ImageSharp.PixelFormats;
+using System.Collections.Generic;
+// using Image = SixLabors.ImageSharp.Image;
 
 namespace Prueba1
 {
@@ -76,13 +81,72 @@ namespace Prueba1
         //Botón 1
        static void Onbutton1Clicked(object sender, EventArgs arg)
        {
-          Process.Start("libcamera-still", "-f -t 5000 -o barcode.jpg");
+          //ESCANEAR MIENTRAS ESTÁ LA CAMARA ABIERTA
+
+          //Create and congif Scanner
+          // var scanner = new ImageScanner();
+          // // scanner.SetConfiguration(SymbolType.None, Config.Enable, 0);
+          // scanner.Cache = false;
+
+          // var keepScanning = true;
+          // var cont = 0;
+          // while(keepScanning)
+          // {
+          //      Process.Start("libcamera-still", "-f -t 5000 -o barcode.jpg");
+          //      // System.Drawing.Image barcode = System.Drawing.Image.FromFile("barcode.jpg");
+          //      System.IntPtr barcodeBitmap = new System.IntPtr();          
+          //      System.Drawing.Image barcode = System.Drawing.Image.FromHbitmap(barcodeBitmap);
+               
+          //      List<Symbol> barcodeScanned = scanner.Scan(barcode);
+          //      if(barcodeScanned != null || cont > 100){
+          //           Console.Write("Se ha escaneado el código :", barcodeScanned.ToString());
+          //           keepScanning = false;
+          //      }
+          //      cont ++;
+          // }
+          // Console.Write("He salido del while");
+          // Task.Run(() => ScanBarcodes());
+
+
+
+          //HACER FOTO Y ESCANEAR
+          // Dictionary<DecodeHintType, object> hints = new Dictionary<DecodeHintType, object>();
+          // hints.Add(DecodeHintType.TRY_HARDER, true);
+
+          // MultiFormatReader readerParams = new MultiFormatReader();
+          // Func<object, LuminanceSource> imageFunc = (object input) =>
+          // {
+          //      var bitmap = (Bitmap)input;
+          //      var source = new LuminanceSource(bitmap);
+          // };
+
+          // BarcodeReader reader = new BarcodeReader(); 
+
+          // var keepScanning = true;
+          // var cont = 0;
+          // while(keepScanning)
+          // {
+          //      Process.Start("libcamera-still", "-f -t 5000 -o barcode.jpg");               
+               // System.Drawing.Image barcodeBitmap = new System.Drawing.Image(@"/barcode.jpg");          
+               // Image<Rgba32> barcodeImagea = Image.Load<Rgba32>("/barcode.jpg");
+               // Gtk.Image barcodeImage = new Gtk.Image("/barcode.jpg");
+               // var image = new System.Drawing.Image.FromFile("barcode.jpg");
+               // var barcodeScanned = reader.Decode(barcodeImage);
+               
+               // if(barcodeScanned != null || cont > 100){
+               //      Console.Write("Se ha escaneado el código :", barcodeScanned.ToString());
+               //      keepScanning = false;
+               // }
+               // cont ++;
+          // }
+          // Console.Write("He salido del while");
+          // Process.Start("libcamera-still", "-f -t 5000 -o barcode.jpg");
           // var txt = "Hola";  
-          File.ReadAllBytes("/barcode.png");
-          Bitmap barcodeBitmap = new Bitmap(@"/barcode.jpg");          
-          var reader = new BarcodeReader();
+          // File.ReadAllBytes("/barcode.png");
+          // Bitmap barcodeBitmap = new Bitmap(@"/barcode.jpg");          
+          // var reader = new BarcodeReader();
           // BarcodeReader<EAN_8> reader = new BarcodeReader<UPCEANReader>();
-          Result barcode = reader.Decode(barcodeBitmap);
+          // Result barcode = reader.Decode(barcodeBitmap);
           // if(results != null)
           // {
           //      Console.Write("A barcode has been readed");
@@ -105,7 +169,18 @@ namespace Prueba1
        //Botón 2
        static void Onbutton2Clicked(object sender, EventArgs arg)
        {
-
+          var keepScanning = true;
+          var cont = 0;
+          while(keepScanning)
+          {
+               Process.Start("libcamera-still", "-f -t 5000 -o barcode.jpg");               
+               var result = IronBarCode.BarcodeReader.Read(@"barcode.jpg");
+               if(result != null || cont > 100){
+                    Console.Write("Se ha escaneado el código :",result.First().Text);
+               }
+               cont ++;
+          }
+          Console.Write("He salido del while");
        }
        //Botón 3
        static void Onbutton3Clicked(object sender, EventArgs arg)
